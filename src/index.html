@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="us-ascii">
+  <meta name="viewport" content="width=device-width, initial-scale=0">
+  <meta name="description" content="POC||GTFO Mirror">
+  <title>POC||GTFO</title>
+  <link rel="stylesheet" href="https://chimbosonic.com/styles.css">
+</head>
+
+<body>
+  <pre id="root">
+<a href="https://chimbosonic.com/" id="dont-panic"><pre>                              
+                                  nnnmmm
+                   \||\       ;;;;%%%@@@@@@       \ //,
+                    V|/     %;;%%%%%@@@@@@@@@@  ===Y//
+                    68=== ;;;;%%%%%%@@@@@@@@@@@@    @Y
+                    ;Y   ;;%;%%%%%%@@@@@@@@@@@@@@    Y
+                    ;Y  ;;;+;%%%%%%@@@@@@@@@@@@@@@    Y
+                    ;Y__;;;+;%%%%%%@@@@@@@@@@@@@@i;;__Y
+                    iiY"";;   "uu%@@@@@@@@@@uu"   @"";;;>
+                          Y     "UUUUUUUUU"     @@
+                          `;       ___ _       @
+                            `;.  ,====\\=.  .;'
+                              ``""""`==\\=='
+                                      `;=====
+                                        ===
+
+88888b   d888b  888b  88 8P 888888    88888b    888     888b  88 88  d888b 88
+88   88 88   88 88`8b 88      88      88   88  88 88    88`8b 88 88 88   ` 88
+88   88 88   88 88 88 88      88      88888P  88   88   88 88 88 88 88     88
+88   88 88   88 88 `8b88      88      88     d8888888b  88 `8b88 88 88   , ""
+88888P   `888P  88  `888      88      88     88     `8b 88  `888 88  `888P 88
+</pre>
+</a>
+    <h2 class="dont-panic">POC||GTFO MIRROR</h2>
+<span class="prompt">[<span class="user">chimbosonic</span>@<span class="host">website</span> <span class="dir">pocorgtfo</span>]<span class="p">#</span></span> cat README.MD
+<span class="out">In the spirit of the samizdat license of PoC||GTFO, here is my mirror of the journals.
+This mirror was generated using <a href="get_all_pocorgtfo.sh">get_all_pocorgtfo.sh</a> which will pull all pocorgtfo PDFs from alchemistowl's <a href="https://www.alchemistowl.org/pocorgtfo/">mirror</a>.
+</span>
+<span  class="prompt">[<span class="user">chimbosonic</span>@<span class="host">website</span> <span class="dir">pocorgtfo</span>]<span class="p">#</span></span><span id="sha"> cat shasums
+</span>
+<span class="prompt">[<span class="user">chimbosonic</span>@<span class="host">website</span> <span class="dir">pocorgtfo</span>]<span class="p">#</span></span></span><span id = "lsla"> ls -lah
+</span>
+<script>
+  let sha = document.getElementById("sha")
+  let scriptsha = document.createElement('span');
+  inhtml = `6cf0133f1f4beb342537fd593bb42f5acd83ba2b2fad495e2fedae40103489dd  <a href="get_all_pocorgtfo.sh">get_all_pocorgtfo.sh</a>\n`
+  scriptsha.innerHTML = inhtml;
+  sha.appendChild(scriptsha);
+
+  fetch("file_list.json").then(response => response.json()).then(
+    file_list => {
+      for (file of file_list) {
+        let span = document.createElement('span');
+        inhtml = `${file.sha256}  <a href="${file.filename}">${file.filename}</a>\n`
+        span.innerHTML = inhtml;
+        sha.appendChild(span);
+      }
+    }
+  )
+
+  let script = document.createElement('span');
+  script.className = "out"
+  script.innerHTML = '.<span class="panic">r</span>-<span class="panic">x</span><span class="panic">r</span>--<span class="panic">r</span>--    <span class="user">1.1K</span> <span class="panic">chimbosonic</span>  5 Feb 12:00 <a href="get_all_pocorgtfo.sh">get_all_pocorgtfo.sh</a>\n'
+  lsla.appendChild(script);
+
+
+  fetch("file_list.json").then(response => response.json()).then(
+    file_list => {
+      for (file of file_list) {
+        let span = document.createElement('span');
+        let space = " "
+        if (file.size.length > 3) {
+          space = ""
+        }
+        span.className = "out"
+        inhtml = `.<span class="panic">r</span>-<span class="panic">x</span><span class="panic">r</span>--<span class="panic">r</span>--    ${space}<span class="user">${file.size}</span> <span class="panic">chimbosonic</span>  5 Feb 12:00 <a href="${file.filename}">${file.filename}</a>\n`
+        span.innerHTML = inhtml;
+        lsla.appendChild(span);
+      }
+    }
+  );
+
+</script>
